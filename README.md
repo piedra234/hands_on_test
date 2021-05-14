@@ -68,4 +68,5 @@ DJANGO_ENV_PATH=$DJANGO_SERVER/python_venvs/hands_on
 ##################
 api/employees
 api/employees/<int:idEmployee>
-employees
+
+employees # view covers both api functionalities
