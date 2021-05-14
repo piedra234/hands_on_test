@@ -1,0 +1,45 @@
+{% extends  'base.html' %}
+{% load static%}
+{% block content %}
+
+<h1>BIENVENIDO</h1>
+<div id = "employee_form">
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{employee_form.as_p}}
+        {{employee_form.errors}}
+        <input type="submit" name="get_employees" value="Get Employees">
+    </form>
+</div>
+<div id = "table">
+    <table id="list_table" width="80%" >
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Contract Type</th>
+                <th>Role</th>
+                <th>Role Description</th>
+                <th>Hourly Salary</th>
+                <th>Monthly Salary</th>
+                <th>Anual Salary</th>
+            </tr>
+        </thead>
+        <tbody id="table_body">
+            {% for employee in employee_data %}
+                <tr>
+                    <th>{{ employee.id }}</th>
+                    <th>{{ employee.name }}</th>
+                    <th>{{ employee.contractTypeName }}</th>
+                    <th>{{ employee.roleId }} <br> {{ employee.roleName }}</th>
+                    <th>{{ employee.roleDescription }}</th>
+                    <th>{{ employee.hourlySalary }}</th>
+                    <th>{{ employee.monthlySalary }}</th>
+                    <th>{{ employee.calculatedAnualSalary }}</th>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock content %}

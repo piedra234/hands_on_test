@@ -1,6 +1,4 @@
-# -*- coding: utf-8 -*-
-
 from django.forms import Form, CharField, TextInput
 
-class Employee_Form(Form):
+class EmployeeForm(Form):
     id = CharField( widget=TextInput(attrs={'type':'number'}),required=False)

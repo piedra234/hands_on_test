@@ -7,15 +7,13 @@ from .serializers.employeeSerializer import EmployeeSerializer
 from .querysets.employeeQuery import EmployeesQuery
 # Create your views here.
 
-class EmployeesAPIView (APIView):
+class EmployeesAPI (APIView):
     """
-    API to gets employees
+    API to gets employees.
     Parameters:
-        *Can be used without Url parameters to get all employees.
-		id: Id from employee.
+        None: Is used without Url parameters to get all employees.
 	Returns: 
 		List of employees.
-        Empty list if there is no employee with the parameter provided.
     """
     def get(self, request, *args, **kwargs):
         employees_data = EmployeesQuery()
@@ -25,15 +23,13 @@ class EmployeesAPIView (APIView):
         return Response(employees_serialized)
 
 
-class EmployeeIdAPIView (APIView):
+class EmployeeIdAPI (APIView):
     """
-    API to gets employees
+    API to gets employee by id.
     Parameters:
-        *Can be used without Url parameters to get all employees.
 		id: Id from employee.
 	Returns: 
-		List of employees.
-        Empty list if there is no employee with the parameter provided.
+		Employee or empty if there is no employee with the id provided.
     """
     def get(self, request, idEmployee, *args, **kwargs):
         employees_data = EmployeesQuery()
