@@ -15,5 +15,7 @@ class Employee():
     def calculate_anual_salary(self):
         if self.contract_type_name == 'HourlySalaryEmployee':
             return 120 * self.hourly_salary * 12
-        else:
+        elif self.contract_type_name == 'MonthlySalaryEmployee':
             return self.monthly_salary * 12
+        else:
+            raise ValueError(TypeError("Unknown contract type"))
