@@ -16,7 +16,7 @@ class EmployeeAPIView (APIView):
         Empty list if there is no employee with the parameter provided.
     """
     def get(self, request, *args, **kwargs):
-        employees_raw = EmployeeParser("http://masglobaltestapi.azurewebsites.net/api/employees")
+        employees_raw = EmployeesParser("http://masglobaltestapi.azurewebsites.net/api/employees")
         if 'id' in request.GET and request.GET["id"] != '':
             employee_id = request.GET["id"]
             employees = employees_raw.get_employee_by_id(employee_id)         

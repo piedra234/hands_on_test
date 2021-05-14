@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
-class EmployeesDalConfig(AppConfig):
+class EmployeesApiConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'employees_dal'
+    name = 'employees_api'
